@@ -44,6 +44,12 @@ $ mkdir project && cd project
 
 	すると作業したいとこにwebに上がってるやつがそこにあるはず！！  
 
+1. アップロード時の設定
+>$ git remote add origin git@github.com:ie-ModelingAndDesign/2015-J.git
+
+1. SSHの設定
+参考サイトに書いてあるのでやってみてくださいいい
+
 これで作業準備完了 
 
 ###作業開始！の前に
@@ -93,6 +99,9 @@ $ mkdir project && cd project
 >$ git commit -m "ここにコメント書く"
 	
 	コメントには，どこどこ変更したとか，どういう処理を追加したとか書いたほうがいい？
+
+3. アップロード
+> $ git push -u origin ブランチ名
 
 ###参考サイト
 - Gitの基本的な使い方メモ  
