@@ -23,36 +23,42 @@
 ###setup
 
 1. gitが入ってるか確認  
->$ git --version
-
+```
+$ git --version
+```
 	git version ほげほげって書いてあれば入ってる  	
 	入ってなかったらHomebrewやらなんやらで入れる!  
 
 1. リモートレポジトリ(webに上がってるディレクトリ)を置く場所に移動  
 	例えば，~/modering/project/ に置く場合  
->$ cd ~/  
+```
+$ cd ~/  
 $ mkdir modering && cd modering  
 $ mkdir project && cd project
-
+```
 	作業したいとこに置くといいと思う．
 
 1. リモートレポジトリを取ってくる
 	今回うちらの開発するやつは  
 	https://github.com/ie-ModelingAndDesign/2015-J
 	に置いてあるから
->$ git clone https://github.com/ie-ModelingAndDesign/2015-J
-
+```
+$ git clone https://github.com/ie-ModelingAndDesign/2015-J
+```
 	すると作業したいとこにwebに上がってるやつがそこにあるはず！！  
 
 1. アップロード時の設定
->$ git remote add origin git@github.com:ie-ModelingAndDesign/2015-J.git
+```
+$ git remote add origin git@github.com:ie-ModelingAndDesign/2015-J.git
+```
 
 1. SSHの設定
 参考サイトに書いてあるのでやってみてくださいいい
 
 1. SSH-keyの登録  
-> $ ssh -i (ssh-key(秘密鍵)) ユーザー@サーバー  
-
+```
+$ ssh -i (ssh-key(秘密鍵)) git@github.com
+```
 
 ってやったら勝手にやってくれるヾ(*≧∀≦*)ﾉ  
 
@@ -67,48 +73,74 @@ $ mkdir project && cd project
   
 例えば，今のやつに出力機能を追加する時  
 2. 新しいブランチを作る
->$ git checkout -b outputline(新しいブランチの名前，今回はoutputlineとする)
+```
+$ git checkout -b outputline(新しいブランチの名前，今回はoutputlineとする)
+```
 
 2. 今あるブランチを見てみる  
->$ git branch 
+```
+$ git branch 
+```
 
-	これを実行すると新しく作ったやつとか誰かが作ったブランチ，メインのmasterブランチとかが表示されて，今どこかって表示してくれる
+これを実行すると新しく作ったやつとか誰かが作ったブランチ，メインのmasterブランチとかが表示されて，今どこかって表示してくれる
 
 2. ブランチの移動
->$ git branch ブランチ名
+```
+$ git branch ブランチ名
+```
 
-	これで好きなブランチに移動できる
+これで好きなブランチに移動できる
 	また一つ前のブランチに戻るには,このコマンドを実行する．  
->$ git branch -
-	
+```
+$ git branch -
+```
 
 2. メインのmasterブランチに同期する  
 ひと段落してエラーもないなーって時にメインのブランチと同期してみる．  
-> $ git checkout master 
-> $ git merge --no-ff 同期するブランチ名
+```
+ $ git checkout master 
+ $ git merge --no-ff 同期するブランチ名
+```
 
 ###自分が作成したファイルをアップロードする時
 自分が作ったやつの動作テストとかも終わってコードをwebに乗っける時  
 
 3. git statusコマンドを実行すると新しく追加，内容変更したファイルがずらっと出てくる．  
->$ git status
-
+```
+$ git status
+```
 3. そのファイルを追加したぞって記録する
->$ git add (ファイル名)
-
+```
+$ git add (ファイル名)
+```
 	すべてのファイルを追加する場合は  
->$ git add .
+```
+$ git add .
+```
 
 3. 状態を見てみるとさっきと変わってるはず!!
->$ git status
-
+```
+$ git status
+```
 3. 最後にコメントつけてレポジトリに記録
->$ git commit -m "ここにコメント書く"
-	
-	コメントには，どこどこ変更したとか，どういう処理を追加したとか書いたほうがいい？
+```
+$ git commit -m "ここにコメント書く"
+```
+
+コメントには，どこどこ変更したとか，どういう処理を追加したとか書いたほうがいい？
 
 3. アップロード
-> $ git push -u origin ブランチ名
+```
+$ git push -u origin ブランチ名
+```
+
+###誰かが更新してて，自分のやつに更新部分だけ取りこみたい時
+
+```
+$ git pull origin ブランチ名
+```
+
+このコマンドを実行すると，誰かが更新したやつのブランチを自分の側に取り込める
 
 ###参考サイト
 - Gitの基本的な使い方メモ  
@@ -123,5 +155,3 @@ https://help.github.com/articles/error-permission-denied-publickey/
 - 初心者Git日記その五～GitHubにSSH公開鍵登録～  
 http://design1.chu.jp/setucocms-pjt/?p=580  
 
-
-test
