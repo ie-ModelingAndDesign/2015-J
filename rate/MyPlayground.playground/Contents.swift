@@ -52,5 +52,37 @@ for i in 0...9 {
     print(i)
 }
 
+import UIKit
 
+class SecondViewController: UIViewController {
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        // tabBarItemのアイコンを設定する
+        self.tabBarItem = UITabBarItem(title: "統計", image: UIImage(named: "toukei.png"), selectedImage: UIImage(named: "toukei.png"))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    required override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 背景色を設定
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+}
 
