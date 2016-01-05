@@ -26,9 +26,9 @@ class TitleView: UIViewController, UITextFieldDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         //　タブに設定するViewControllerのインスタンスを生成する。
-        let myFirstTab: UIViewController = FirstViewController()
+        let myFirstTab: UIViewController = Inputmenu()
         let mySecondTab: UIViewController = Outputmenu()
-        let myThirdTab: UIViewController = ThirdViewController()
+        let myThirdTab: UIViewController = DBViewController()
         
         //　背景色の変更
         self.window?.backgroundColor = UIColor.whiteColor()
