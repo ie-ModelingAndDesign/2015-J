@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class Inputmenu: UIViewController, UITextFieldDelegate {
     
@@ -14,7 +15,7 @@ class Inputmenu: UIViewController, UITextFieldDelegate {
     private var button: UIButton!
     private var textView: UITextView!
     //　テキストの定義（縦と横の長さ）
-    private let text1: UITextField = UITextField(frame: CGRectMake(0,0,200,30))
+    private var text1: UITextField! = UITextField(frame: CGRectMake(0,0,200,30))
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -90,14 +91,17 @@ class Inputmenu: UIViewController, UITextFieldDelegate {
     
     // ボタンが押されたときの処理
     func tapped() {
-        // textFieldの値を取得
-        let inputText = text1.text
+        // textFieldの値を数値として取得
+        let intamount: Int? = Int(text1.text!)
+        
+        let inputDB = Input()
+        inputDB.amount = intamount!
         print("ボタンが押されたよ！")
         // キーボードを閉じる
         view.endEditing(true)
         
         // 入力された値を表示する
-        print(inputText)
+        print(inputDB.amount)
     }
     
     override func didReceiveMemoryWarning() {

@@ -13,6 +13,7 @@ class Input: Object {
     dynamic var day = 0
     dynamic var month = 0
     dynamic var year = 0
+    dynamic var amount = 0
 }
 
 class Item: Object {

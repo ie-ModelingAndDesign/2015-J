@@ -38,7 +38,7 @@ class Outputmenu: UIViewController {
         view.addSubview(line);
         
     
-        // ボタンの定義をおこなう.
+        // 物換算出力遷移ボタンの設定
         let myButton = UIButton(frame: CGRectMake(0,0,200,80))
         myButton.backgroundColor = UIColor.orangeColor()
         myButton.layer.masksToBounds = true
@@ -50,7 +50,7 @@ class Outputmenu: UIViewController {
         // ボタンをViewに追加する.
         self.view.addSubview(myButton);
         
-        // ボタンの定義をおこなう.
+        // リスト出力画面遷移ボタンの設定
         let listViewButton = UIButton(frame: CGRectMake(0,0,200,80))
         listViewButton.backgroundColor = UIColor.orangeColor()
         listViewButton.layer.masksToBounds = true
@@ -62,7 +62,7 @@ class Outputmenu: UIViewController {
         // ボタンをViewに追加する.
         self.view.addSubview(listViewButton);
         
-        // ボタンの定義をおこなう.
+        // グラフ出力画面遷移ボタンの設定
         let graphViewButton = UIButton(frame: CGRectMake(0,0,200,80))
         graphViewButton.backgroundColor = UIColor.orangeColor()
         graphViewButton.layer.masksToBounds = true
@@ -93,16 +93,16 @@ class Outputmenu: UIViewController {
         // 移動先のViewを定義する.
         let listView = Listview()
         
-        // SecondViewに移動する.
+        // リスト出力画面に移動する.
         self.presentViewController(listView, animated: true, completion: nil)
     }
 
     internal func onClickGotoGraphview(sender: UIButton){
         
         // 移動先のViewを定義する.
-        let graphView = Listview()
+        let graphView = Graphview()
         
-        // SecondViewに移動する.
+        // グラフ出力画面に移動する.
         self.presentViewController(graphView, animated: true, completion: nil)
     }
     
