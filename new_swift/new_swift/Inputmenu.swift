@@ -92,19 +92,47 @@ class Inputmenu: UIViewController, UITextFieldDelegate {
     // ボタンが押されたときの処理
     func tapped() {
         // textFieldの値を数値として取得
+        if isValidateInputContents() == false {
+            return
+        }
+        
         let intamount: Int? = Int(text1.text!)
         
         let inputDB = Input()
         inputDB.amount = intamount!
+        inputDB.day = 7
+        inputDB.month = 1
+        inputDB.year = 2016
         print("ボタンが押されたよ！")
         // キーボードを閉じる
         view.endEditing(true)
         
+        //let realm = try! Realm()
+            
+        //try! realm.write{
+          //  realm.add(inputDB)
+        //}
+        text1.text = ""
+        
         // 入力された値を表示する
         print(inputDB.amount)
+    }
+    
+    private func isValidateInputContents() -> Bool{
+        // 名前の入力
+        if let name = text1.text{
+            if name.characters.count == 0{
+                return false
+            }
+        }else{
+            return false
+        }
+        return true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
+
+

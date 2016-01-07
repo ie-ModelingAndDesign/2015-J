@@ -37,7 +37,13 @@ class Outputmenu: UIViewController {
         line.backgroundColor = UIColor.blackColor()
         view.addSubview(line);
         
-    
+        // 総額ラベルの設定
+        let allAmountLabel: UILabel = UILabel()
+        allAmountLabel.font = UIFont.systemFontOfSize(CGFloat(25))
+        allAmountLabel.text = "うんちゃら円"
+        allAmountLabel.frame = CGRect(x: self.view.bounds.width/2, y: 0, width: 300, height: 150)
+        self.view.addSubview((allAmountLabel))
+        
         // 物換算出力遷移ボタンの設定
         let myButton = UIButton(frame: CGRectMake(0,0,200,80))
         myButton.backgroundColor = UIColor.orangeColor()
