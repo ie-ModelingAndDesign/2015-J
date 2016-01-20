@@ -39,9 +39,9 @@ class Outputmenu: UIViewController {
         
         // 総額ラベルの設定
         let allAmountLabel: UILabel = UILabel()
-        allAmountLabel.font = UIFont.systemFontOfSize(CGFloat(25))
-        allAmountLabel.text = "うんちゃら円"
-        allAmountLabel.frame = CGRect(x: self.view.bounds.width/2, y: 0, width: 300, height: 150)
+        allAmountLabel.font = UIFont.systemFontOfSize(CGFloat(30))
+        allAmountLabel.text = "総額: うんちゃら 円"
+        allAmountLabel.frame = CGRect(x: 20, y: 10, width: 300, height: 150)
         self.view.addSubview((allAmountLabel))
         
         // 物換算出力遷移ボタンの設定
