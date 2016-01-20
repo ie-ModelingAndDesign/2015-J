@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
     
@@ -171,11 +172,14 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
         // キーボードを閉じる
         view.endEditing(true)
         
-        //let realm = try! Realm()
+        do {
+            let realm = try! Realm()
             
-        //try! realm.write{
-          //  realm.add(inputDB)
-        //}
+            try! realm.write{
+                realm.add(inputDB)
+            }
+        }
+        
         text1.text = ""
         
         // 入力された値を表示する
