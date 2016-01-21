@@ -15,13 +15,3 @@ class Input: Object {
     dynamic var year = 0
     dynamic var amount = 0
 }
-
-class Item: Object {
-    dynamic var file = ""
-    dynamic var name = ""
-    dynamic var amount = 0
-    
-    override static func primaryKey() -> String? {
-        return "name"
-    }
-}

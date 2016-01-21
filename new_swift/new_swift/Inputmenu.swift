@@ -150,6 +150,19 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
     
     // 「次へ」ボタンが押されたときの処理
     func tapped() {
+        // textFieldの値を数値として取得
+        if isValidateInputContents() == false {
+            return
+        }
+        
+        let intamount: Int? = Int(text1.text!)
+        
+        let inputDB = Input()
+        inputDB.amount = intamount!
+        inputDB.day = 7
+        inputDB.month = 1
+        inputDB.year = 2016
+
         // textFieldの値を取得
         let inputText = text1.text
         let inputdate = myTextField.text
@@ -157,6 +170,13 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
         print("ボタンが押されたよ！")
         // キーボードを閉じる
         view.endEditing(true)
+        
+        //let realm = try! Realm()
+            
+        //try! realm.write{
+          //  realm.add(inputDB)
+        //}
+        text1.text = ""
         
         // 入力された値を表示する
         print(inputText)
@@ -198,7 +218,21 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
         return date_formatter.stringFromDate(date)
     }
     
+    private func isValidateInputContents() -> Bool{
+        // 名前の入力
+        if let name = text1.text{
+            if name.characters.count == 0{
+                return false
+            }
+        }else{
+            return false
+        }
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
+
+

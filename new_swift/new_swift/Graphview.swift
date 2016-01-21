@@ -41,7 +41,7 @@ class Graphview: UIViewController {
         
         // ボタンをViewに追加する.
         self.view.addSubview(myButton);
-        
+
     }
     
     /*
