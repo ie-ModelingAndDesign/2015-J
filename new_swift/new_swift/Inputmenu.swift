@@ -157,12 +157,14 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
         }
         
         let intamount: Int? = Int(text1.text!)
+        let day: String? = String(myTextField.text)
+        let gamename: String? = String(game.text)
         
         let inputDB = Input()
         inputDB.amount = intamount!
-        inputDB.day = 7
-        inputDB.month = 1
-        inputDB.year = 2016
+        inputDB.day = day!
+        inputDB.game = gamename!
+        
 
         // textFieldの値を取得
         let inputText = text1.text
@@ -171,6 +173,14 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
         print("ボタンが押されたよ！")
         // キーボードを閉じる
         view.endEditing(true)
+        
+        let config = Realm.Configuration(
+              schemaVersion: 1,
+              migrationBlock: { migration, oldSchemaVersion in
+                    if (oldSchemaVersion < 1) {
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
         
         do {
             let realm = try! Realm()
@@ -183,9 +193,9 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
         text1.text = ""
         
         // 入力された値を表示する
-        print(inputText)
-        print(inputdate)
-        print(inputgame)
+        print(inputDB.amount)
+        print(inputDB.day)
+        print(inputDB.game)
     }
     
     // 「完了」を押すと閉じる

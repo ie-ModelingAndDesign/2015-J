@@ -29,7 +29,7 @@ class Title: UIViewController, UITextFieldDelegate {
         Titleimage = UIImageView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height))
         let image  = UIImage(named: "image/title.png")
         Titleimage.image = image
-        Titleimage.contentMode = UIViewContentMode.Center
+        Titleimage.contentMode = UIViewContentMode.ScaleToFill
         Titleimage.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
         self.view.addSubview(Titleimage)
         
