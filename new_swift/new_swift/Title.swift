@@ -27,7 +27,7 @@ class Title: UIViewController, UITextFieldDelegate {
         //self.view.addSubview(text1)
         let screenSize = UIScreen.mainScreen().bounds
         Titleimage = UIImageView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height))
-        let image  = UIImage(named: "image/title.png")
+        let image  = UIImage(named: "image/kakinbo03_2.png")
         Titleimage.image = image
         Titleimage.contentMode = UIViewContentMode.ScaleToFill
         Titleimage.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)

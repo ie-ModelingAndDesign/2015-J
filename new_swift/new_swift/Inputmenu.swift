@@ -190,8 +190,6 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
             }
         }
         
-        text1.text = ""
-        
         // 入力された値を表示する
         print(inputDB.amount)
         print(inputDB.day)
