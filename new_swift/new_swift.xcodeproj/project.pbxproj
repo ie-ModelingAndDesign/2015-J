@@ -20,6 +20,7 @@
 		5FCA0FBC1C2B23C100782644 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCA0FBB1C2B23C100782644 /* Realm.framework */; };
 		5FCA0FBE1C2B23C700782644 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCA0FBD1C2B23C700782644 /* RealmSwift.framework */; };
 		5FCA0FC01C2B24E100782644 /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA0FBF1C2B24E100782644 /* DBViewController.swift */; };
+		5FD1636E1C6242C500C49F5A /* ListCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1636D1C6242C500C49F5A /* ListCustom.swift */; };
 		699942891C18975B00F62FD4 /* Inputmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699942881C18975B00F62FD4 /* Inputmenu.swift */; };
 		69E46B8C1BFD6F89007D668B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E46B8B1BFD6F89007D668B /* AppDelegate.swift */; };
 		FB217E44FE2EED976E8F7F85 /* Pods_new_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA08997B2A0C330E4BD0F362 /* Pods_new_swift.framework */; };
@@ -40,6 +41,7 @@
 		5FCA0FBB1C2B23C100782644 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm.framework"; sourceTree = "<group>"; };
 		5FCA0FBD1C2B23C700782644 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift.framework"; sourceTree = "<group>"; };
 		5FCA0FBF1C2B24E100782644 /* DBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBViewController.swift; sourceTree = "<group>"; };
+		5FD1636D1C6242C500C49F5A /* ListCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCustom.swift; sourceTree = "<group>"; };
 		699942881C18975B00F62FD4 /* Inputmenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inputmenu.swift; sourceTree = "<group>"; };
 		69E46B881BFD6F89007D668B /* new_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = new_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E46B8B1BFD6F89007D668B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		69E46B8A1BFD6F89007D668B /* new_swift */ = {
 			isa = PBXGroup;
@@ -98,6 +101,7 @@
 				5F45B1801C21CD7300BEF542 /* Outputmenu.swift */,
 				5F0C760F1C3D67A100039C17 /* Graphview.swift */,
 				5F5EA63F1C3AC9BA00F77FEB /* Listview.swift */,
+				5FD1636D1C6242C500C49F5A /* ListCustom.swift */,
 				5F45B18C1C21E3AB00BEF542 /* SecondViewController.swift */,
 				5FCA0FBF1C2B24E100782644 /* DBViewController.swift */,
 				5F45B18D1C21E3AB00BEF542 /* ThirdViewController.swift */,
@@ -245,6 +249,7 @@
 			files = (
 				5F5EA6401C3AC9BA00F77FEB /* Listview.swift in Sources */,
 				5F45B1901C21E3AB00BEF542 /* SecondViewController.swift in Sources */,
+				5FD1636E1C6242C500C49F5A /* ListCustom.swift in Sources */,
 				699942891C18975B00F62FD4 /* Inputmenu.swift in Sources */,
 				5F0C76101C3D67A100039C17 /* Graphview.swift in Sources */,
 				5F45B1911C21E3AB00BEF542 /* ThirdViewController.swift in Sources */,
