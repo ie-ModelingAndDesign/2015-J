@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import RealmSwift
 
 class Listview: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
 
 // Tabelで使用する配列.
-var myItems: [String] = ["TEST1", "TEST2", "TEST3"]
 var myTableView: UITableView = UITableView()
+    
+    var Inputitems:Results<Input>?{
+        do{
+            let realm = try Realm()
+            return realm.objects(Input)
+        }catch{
+            print("エラー")
+        }
+        return nil
+    }
+    
+    
 override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -25,16 +37,20 @@ override func viewDidLoad() {
     let displayHeight: CGFloat = self.view.frame.height
     
     // TableViewの生成( status barの高さ分ずらして表示 ).
-    myTableView.frame = CGRect(x: 0, y: barHeight+60, width: displayWidth, height: displayHeight - barHeight)
+    myTableView.frame = CGRectMake(0, barHeight+60, displayWidth, displayHeight - barHeight)
+    //(x: 0, y: barHeight+60, width: displayWidth, height: displayHeight - barHeight)
     
     // Cellの登録.
-    myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+    //myTableView.registerNib(nib, forCellReuseIdentifier: "Cell")
+    myTableView.registerClass(CustomCell.self, forCellReuseIdentifier: "custamCell")
     
     // DataSourceの設定.
     myTableView.dataSource = self
     
     // Delegateを設定.
     myTableView.delegate = self
+    
+    myTableView.rowHeight = UITableViewAutomaticDimension
     
     // Viewに追加する.
     self.view.addSubview(myTableView)
@@ -61,16 +77,14 @@ override func didReceiveMemoryWarning() {
 Cellが選択された際に呼び出される.
 */
 func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    print("Num: \(indexPath.row)")
-    print("Value: \(myItems[indexPath.row])")
+    print("select")
 }
 
 /*
 Cellの総数を返す.
 */
 func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    print("numberOfRowsInSection")
-    return myItems.count
+    return Inputitems?.count ?? 0
 }
 
 /*
@@ -94,10 +108,14 @@ Cellに値を設定する.
 */
 func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
+    //let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("custamCell", forIndexPath: indexPath) as! CustomCell
     
-    cell.textLabel?.text = "\(myItems[indexPath.row])"
+    let INPUT = Inputitems?[indexPath.row]
     
+    cell.titleLabel.text = "にゃん"
+    cell.contentLabel.text = String(INPUT?.amount);
+    cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     return cell
 }
 

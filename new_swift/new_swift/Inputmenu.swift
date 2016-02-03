@@ -165,11 +165,6 @@ class Inputmenu: UIViewController, UITextFieldDelegate, UIToolbarDelegate{
         inputDB.day = day!
         inputDB.game = gamename!
         
-
-        // textFieldの値を取得
-        let inputText = text1.text
-        let inputdate = myTextField.text
-        let inputgame = game.text
         print("ボタンが押されたよ！")
         // キーボードを閉じる
         view.endEditing(true)
