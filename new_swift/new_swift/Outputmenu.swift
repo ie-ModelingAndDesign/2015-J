@@ -40,8 +40,10 @@ class Outputmenu: UIViewController {
         
         // 総額ラベルの設定
         let allAmountLabel: UILabel = UILabel()
-        allAmountLabel.font = UIFont.systemFontOfSize(CGFloat(30))
+        //allAmountLabel.font = UIFont.systemFontOfSize(CGFloat(30))
+        //allAmountLabel.font = UIFont.fontWithName:@"PixelMplus10-Regular" size:30.0
         allAmountLabel.text = "総額: うんちゃら 円"
+        allAmountLabel.font = UIFont(name: "PixelMplus12-Regular", size: 30)
         allAmountLabel.frame = CGRect(x: 20, y: 10, width: 300, height: 150)
         self.view.addSubview((allAmountLabel))
         
