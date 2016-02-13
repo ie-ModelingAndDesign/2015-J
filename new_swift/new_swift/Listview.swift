@@ -113,7 +113,7 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
     
     let INPUT = Inputitems?[indexPath.row]
     
-    cell.titleLabel.text = "にゃん"
+    cell.titleLabel.text = INPUT?.day
     cell.contentLabel.text = String(INPUT?.amount);
     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     return cell

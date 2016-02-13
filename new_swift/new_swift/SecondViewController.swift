@@ -55,7 +55,7 @@ class SecondViewController: UIViewController {
         
         
         // 背景色を設定
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor(red: 0.6667, green: 0.7451, blue: 0.6667, alpha: 1.0)
         
         //　UIImageViewを作成する。
         ItemView = UIImageView(frame: CGRectMake(0, 0, 100, 120))

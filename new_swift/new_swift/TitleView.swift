@@ -28,13 +28,13 @@ class TitleView: UIViewController, UITextFieldDelegate {
         //　タブに設定するViewControllerのインスタンスを生成する。
         let myFirstTab: UIViewController = Inputmenu()
         let mySecondTab: UIViewController = Outputmenu()
-        let myThirdTab: UIViewController = DBViewController()
+        //let myThirdTab: UIViewController = DBViewController()
         
         //　背景色の変更
         self.window?.backgroundColor = UIColor.whiteColor()
         
         //　タブに要素を持つArrayの.を作成
-        let myTabs = NSArray(objects: myFirstTab, mySecondTab, myThirdTab)
+        let myTabs = NSArray(objects: myFirstTab, mySecondTab)
         
         //　UITabControllerの作成
         myTabBarController = UITabBarController()

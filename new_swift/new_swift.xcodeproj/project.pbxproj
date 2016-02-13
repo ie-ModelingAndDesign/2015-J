@@ -16,6 +16,7 @@
 		5F5EA63E1C3AC3B400F77FEB /* Item.realm in Resources */ = {isa = PBXBuildFile; fileRef = 5F5EA63C1C3AC37E00F77FEB /* Item.realm */; };
 		5F5EA6401C3AC9BA00F77FEB /* Listview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5EA63F1C3AC9BA00F77FEB /* Listview.swift */; };
 		5F7328D01C3842CF0015FE27 /* image in Resources */ = {isa = PBXBuildFile; fileRef = 5F7328CE1C3842970015FE27 /* image */; };
+		5FB30B731C6EF9E100BD35C8 /* design in Resources */ = {isa = PBXBuildFile; fileRef = 5FB30B711C6EF9A700BD35C8 /* design */; };
 		5FCA0FBA1C2B22F000782644 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA0FB91C2B22F000782644 /* RealmDB.swift */; };
 		5FCA0FBC1C2B23C100782644 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCA0FBB1C2B23C100782644 /* Realm.framework */; };
 		5FCA0FBE1C2B23C700782644 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCA0FBD1C2B23C700782644 /* RealmSwift.framework */; };
@@ -37,6 +38,7 @@
 		5F5EA63C1C3AC37E00F77FEB /* Item.realm */ = {isa = PBXFileReference; lastKnownFileType = file; name = Item.realm; path = Database/Item.realm; sourceTree = "<group>"; };
 		5F5EA63F1C3AC9BA00F77FEB /* Listview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listview.swift; sourceTree = "<group>"; };
 		5F7328CE1C3842970015FE27 /* image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = image; sourceTree = "<group>"; };
+		5FB30B711C6EF9A700BD35C8 /* design */ = {isa = PBXFileReference; lastKnownFileType = folder; path = design; sourceTree = "<group>"; };
 		5FCA0FB91C2B22F000782644 /* RealmDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		5FCA0FBB1C2B23C100782644 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm.framework"; sourceTree = "<group>"; };
 		5FCA0FBD1C2B23C700782644 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "Pods/../build/Debug-iphoneos/RealmSwift.framework"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				5F45B18E1C21E3AB00BEF542 /* Title.swift */,
 				5F45B18F1C21E3AB00BEF542 /* TitleView.swift */,
 				5F7328CE1C3842970015FE27 /* image */,
+				5FB30B711C6EF9A700BD35C8 /* design */,
 				69E46B921BFD6F89007D668B /* Assets.xcassets */,
 				69E46B971BFD6F89007D668B /* Info.plist */,
 				5FCA0FB91C2B22F000782644 /* RealmDB.swift */,
@@ -187,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB30B731C6EF9E100BD35C8 /* design in Resources */,
 				5F5EA63E1C3AC3B400F77FEB /* Item.realm in Resources */,
 				5F7328D01C3842CF0015FE27 /* image in Resources */,
 			);

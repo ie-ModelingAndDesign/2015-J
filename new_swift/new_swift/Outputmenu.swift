@@ -31,7 +31,7 @@ class Outputmenu: UIViewController {
         super.viewDidLoad()
         
         // 背景色を設定
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor(red: 0.6667, green: 0.7451, blue: 0.6667, alpha: 1.0)
         
         let line = UIView(frame: CGRectMake(0, self.view.bounds.height/1.5,
             self.view.bounds.width, 2))
@@ -47,10 +47,7 @@ class Outputmenu: UIViewController {
         
         // 物換算出力遷移ボタンの設定
         let myButton = UIButton(frame: CGRectMake(0,0,200,80))
-        myButton.backgroundColor = UIColor.orangeColor()
-        myButton.layer.masksToBounds = true
-        myButton.setTitle("物換算", forState: .Normal)
-        myButton.layer.cornerRadius = 20.0
+        myButton.setBackgroundImage(UIImage(named: "design/buttons/png/kansan_10.png"), forState: UIControlState.Normal)
         myButton.layer.position = CGPoint(x: self.view.bounds.width/1.34, y:550)
         myButton.addTarget(self, action: "onClickMyButton:", forControlEvents: .TouchUpInside)
         
@@ -59,10 +56,7 @@ class Outputmenu: UIViewController {
         
         // リスト出力画面遷移ボタンの設定
         let listViewButton = UIButton(frame: CGRectMake(0,0,200,80))
-        listViewButton.backgroundColor = UIColor.orangeColor()
-        listViewButton.layer.masksToBounds = true
-        listViewButton.setTitle("リスト", forState: .Normal)
-        listViewButton.layer.cornerRadius = 20.0
+        listViewButton.setBackgroundImage(UIImage(named: "design/buttons/png/list_10.png"), forState: UIControlState.Normal)
         listViewButton.layer.position = CGPoint(x: self.view.bounds.width/4, y:550)
         listViewButton.addTarget(self, action: "onClickGotoListview:", forControlEvents: .TouchUpInside)
         
@@ -71,10 +65,7 @@ class Outputmenu: UIViewController {
         
         // グラフ出力画面遷移ボタンの設定
         let graphViewButton = UIButton(frame: CGRectMake(0,0,200,80))
-        graphViewButton.backgroundColor = UIColor.orangeColor()
-        graphViewButton.layer.masksToBounds = true
-        graphViewButton.setTitle("グラフ", forState: .Normal)
-        graphViewButton.layer.cornerRadius = 20.0
+        graphViewButton.setBackgroundImage(UIImage(named: "design/buttons/png/graph_10.png"), forState: UIControlState.Normal)
         graphViewButton.layer.position = CGPoint(x: self.view.bounds.width/4, y:640)
         graphViewButton.addTarget(self, action: "onClickGotoGraphview:", forControlEvents: .TouchUpInside)
         
