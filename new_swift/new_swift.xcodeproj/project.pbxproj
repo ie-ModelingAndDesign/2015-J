@@ -88,6 +88,7 @@
 		5FE4F4691C71A72900EA9495 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE4F43B1C71A72900EA9495 /* title.png */; };
 		5FE4F46A1C71A72900EA9495 /* title_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE4F43C1C71A72900EA9495 /* title_1.png */; };
 		5FE4F46B1C71A72900EA9495 /* title_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FE4F43D1C71A72900EA9495 /* title_2.png */; };
+		5FE4F46C1C71A7FD00EA9495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E46B921BFD6F89007D668B /* Assets.xcassets */; };
 		699942891C18975B00F62FD4 /* Inputmenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699942881C18975B00F62FD4 /* Inputmenu.swift */; };
 		69E46B8C1BFD6F89007D668B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E46B8B1BFD6F89007D668B /* AppDelegate.swift */; };
 		FB217E44FE2EED976E8F7F85 /* Pods_new_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA08997B2A0C330E4BD0F362 /* Pods_new_swift.framework */; };
@@ -440,6 +441,7 @@
 				5FE4F4631C71A72900EA9495 /* next_k_10.png in Resources */,
 				5FE4F4431C71A72900EA9495 /* hoka_k.pdf in Resources */,
 				5FE4F45A1C71A72900EA9495 /* kansan_12.png in Resources */,
+				5FE4F46C1C71A7FD00EA9495 /* Assets.xcassets in Resources */,
 				5FE4F3FC1C71A71100EA9495 /* Icon-76@2x.png in Resources */,
 				5FE4F4411C71A72900EA9495 /* graph_12.pdf in Resources */,
 				5FE4F4061C71A71100EA9495 /* Icon-Spotlight-40@3x.png in Resources */,
