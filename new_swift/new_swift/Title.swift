@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class Title: UIViewController, UITextFieldDelegate {
     
@@ -37,14 +37,49 @@ class Title: UIViewController, UITextFieldDelegate {
         // タップされたときの処理を関数に投げる
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "MovetoTitleView")
         view.addGestureRecognizer(tap)
+        
+        
     }
     
     // タップされたときの処理
     func MovetoTitleView (){
         let myTitleView: UIViewController = TitleView()
+        pathconect()
         
         // Viewの移動
         self.presentViewController(myTitleView, animated: true, completion: nil)
+    }
+    
+    func pathconect() {
+        
+        let dummypath = Input()
+        dummypath.day = "1111"
+        dummypath.amount = 1234
+        dummypath.game = "fwe"
+        
+
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
+        
+        do{
+            let realm = try! Realm()
+            
+            try! realm.write {
+                realm.add(dummypath)
+            } 
+        }
+        
+        let realm = try! Realm()
+        let hoge = realm.objects(Input).last!
+        try! realm.write {
+            realm.delete(hoge)
+           
+        }
     }
     
     override func didReceiveMemoryWarning() {

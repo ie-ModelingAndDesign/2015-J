@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 
+
+
 class Outputmenu: UIViewController {
     
     init() {
@@ -30,6 +32,7 @@ class Outputmenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // 背景色を設定
         self.view.backgroundColor = UIColor(red: 0.6667, green: 0.7451, blue: 0.6667, alpha: 1.0)
         
@@ -42,8 +45,8 @@ class Outputmenu: UIViewController {
         let allAmountLabel: UILabel = UILabel()
         //allAmountLabel.font = UIFont.systemFontOfSize(CGFloat(30))
         //allAmountLabel.font = UIFont.fontWithName:@"PixelMplus10-Regular" size:30.0
-        allAmountLabel.text = "総額: うんちゃら 円"
-        allAmountLabel.font = UIFont(name: "PixelMplus12-Regular", size: 30)
+        allAmountLabel.text = "総額:" + String(getsum()) + "円"
+        allAmountLabel.font = UIFont(name: "PixelMplus12-Regular", size: 32)
         allAmountLabel.frame = CGRect(x: 20, y: 10, width: 300, height: 150)
         self.view.addSubview((allAmountLabel))
         
@@ -73,8 +76,22 @@ class Outputmenu: UIViewController {
         
         // ボタンをViewに追加する.
         self.view.addSubview(graphViewButton);
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "MovetoTitleView")
+        view.addGestureRecognizer(tap)
+        
+        let pazudoraLabel: UILabel = UILabel()
+        pazudoraLabel.text = "パズドラ:" + /*String(getgameamount()) + */ "円"
+        pazudoraLabel.font = UIFont(name: "PixelMplus12-Regular", size: 32)
+        pazudoraLabel.frame = CGRect(x: 5, y: 55, width: 300, height: 150)
+        self.view.addSubview((pazudoraLabel))
+        
     }
     
+    
+    func MovetoTitleView (){
+        print("aaaaaa")
+        self.setNeedsFocusUpdate()
+    }
     
     /*
     ボタンイベント
@@ -108,6 +125,25 @@ class Outputmenu: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func getsum() -> Int{
+        
+        var Inputitems:Results<Input>?{
+            do{
+                let realm = try Realm()
+                return realm.objects(Input)
+            }catch{
+                print("エラー")
+            }
+            return nil
+        }
+        var datasum = 0
+        
+        for i in Inputitems!{
+            datasum += i.amount
+        }
+        return datasum
     }
     
 }

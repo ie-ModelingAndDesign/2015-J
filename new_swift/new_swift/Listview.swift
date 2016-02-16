@@ -55,11 +55,9 @@ override func viewDidLoad() {
     // Viewに追加する.
     self.view.addSubview(myTableView)
     
-    let myButton = UIButton(frame: CGRectMake(0,0,100,50))
-    myButton.backgroundColor = UIColor.orangeColor()
+    let myButton = UIButton(frame: CGRectMake(0,0,117,50))
     myButton.layer.masksToBounds = true
-    myButton.setTitle("もどる", forState: .Normal)
-    myButton.layer.cornerRadius = 20.0
+    myButton.setBackgroundImage(UIImage(named: "modoru_k_12.png"), forState: UIControlState.Normal)
     myButton.layer.position = CGPoint(x: self.view.bounds.width/7, y:50)
     myButton.addTarget(self, action: "onClickGoBack:", forControlEvents: .TouchUpInside)
     
@@ -101,6 +99,14 @@ func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexP
 */
 func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     print("commitEdittingStyle:\(editingStyle)")
+    let realm = try! Realm()
+    let INPUT = Inputitems?[indexPath.row]
+    try! realm.write {
+        // 最後のデータ
+        realm.delete(INPUT!)
+        // 全てのデータ
+        //realm.deleteAll()
+    }
 }
 
 /*
@@ -111,10 +117,13 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
     //let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
     let cell = tableView.dequeueReusableCellWithIdentifier("custamCell", forIndexPath: indexPath) as! CustomCell
     
-    let INPUT = Inputitems?[indexPath.row]
+    let INPUT = Inputitems![indexPath.row]
     
-    cell.titleLabel.text = "にゃん"
-    cell.contentLabel.text = String(INPUT?.amount);
+    let amounttext:String = String(INPUT.amount) + "円"
+    
+    cell.titleLabel.text = INPUT.day
+    cell.contentLabel.text = amounttext
+    cell.gameLabel.text = INPUT.game
     cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
     return cell
 }

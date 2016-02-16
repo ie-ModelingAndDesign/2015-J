@@ -13,6 +13,7 @@ class CustomCell: UITableViewCell {
     
     var titleLabel = UILabel();
     var contentLabel = UILabel();
+    var gameLabel = UILabel();
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!)
     {
@@ -27,6 +28,11 @@ class CustomCell: UITableViewCell {
         contentLabel = UILabel(frame: CGRectMake(10, 22, 300, 15));
         contentLabel.text = "";
         contentLabel.font = UIFont.systemFontOfSize(22)
+        self.addSubview(contentLabel);
+        
+        gameLabel = UILabel(frame: CGRectMake(200, 22, 300, 15));
+        gameLabel.text = "";
+        gameLabel.font = UIFont.systemFontOfSize(20)
         self.addSubview(contentLabel);
         
     }

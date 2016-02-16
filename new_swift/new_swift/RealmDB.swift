@@ -14,3 +14,8 @@ class Input: Object {
     dynamic var amount = 0
     dynamic var game = ""
 }
+
+
+class Item{
+    dynamic var name = ""
+}
